@@ -7,8 +7,8 @@ import repositories.member_repository as member_repository
 # import repositories.booking_repository as booking_repository
 
 member_1 = Member("David", "Brown")
-# member_repository.delete_all()
 
-# member_repository.save_member(member_1)
 
-print(member_repository.select_member(1))
+member_repository.save_member(member_1)
+member_repository.delete_all()
+print(member_repository.select_all())

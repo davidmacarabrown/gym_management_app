@@ -14,7 +14,7 @@ def save_member(member):
     
 
 def select_member(id):
-    # pdb.set_trace()
+    
     member = None
     sql = "SELECT * FROM members WHERE id = %s"
     values = [id]
@@ -26,11 +26,12 @@ def select_member(id):
     return member
 
 def select_all():
-    # pdb.set_trace()
+    
     sql = "SELECT * FROM members"
     results = run_sql(sql)
     return results
 
 def delete_all():
+    
     sql = "DELETE FROM members"
     run_sql(sql)
