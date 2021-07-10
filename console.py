@@ -22,5 +22,9 @@ import repositories.gym_class_repository as gym_class_repository
 
 class_1 = GymClass("Personal Training", "One to one personal training session focusing on helping the client achieve their specific fitness goals, and providing structured training for clients of all levels of ability. This includes workout planning and training the client in the safe use of machines and gym equipment.")
 
+class_2 = GymClass("Badminton Singles", "Solo badminton coaching with one instructor, highly focused training suitable for individuals of any skill level.")
+
 gym_class_repository.create_class(class_1)
-print(gym_class_repository.select_class(1).description)
+gym_class_repository.create_class(class_2)
+
+print(gym_class_repository.select_all())

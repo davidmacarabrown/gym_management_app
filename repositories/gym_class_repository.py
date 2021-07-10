@@ -19,3 +19,8 @@ def select_class(id):
     result = run_sql(sql, values)
     returned_class = GymClass(result[0]["class_name"], result[0]["class_description"], result[0]["id"])
     return returned_class
+
+def select_all():
+    sql = "SELECT * FROM classes"
+    result = run_sql(sql)
+    return result
