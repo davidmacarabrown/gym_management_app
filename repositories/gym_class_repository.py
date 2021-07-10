@@ -6,9 +6,16 @@ from models.gym_class import GymClass
 def create_class(gym_class):
     sql = "INSERT INTO classes (class_name, class_description) VALUES (%s, %s) RETURNING *"
     values = [gym_class.name, gym_class.description]
-    results = run_sql(sql, values)
-    name = results[0]["class_name"]
-    description = results[0]["class_description"]
-    id = results[0]["id"]
+    result = run_sql(sql, values)
+    name = result[0]["class_name"]
+    description = result[0]["class_description"]
+    id = result[0]["id"]
     returned_class = GymClass(name, description, id)
+    return returned_class
+
+def select_class(id):
+    sql = "SELECT * FROM classes WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)
+    returned_class = GymClass(result[0]["class_name"], result[0]["class_description"], result[0]["id"])
     return returned_class
