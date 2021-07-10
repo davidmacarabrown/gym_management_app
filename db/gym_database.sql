@@ -10,8 +10,8 @@ CREATE TABLE members(
 );
 
 CREATE TABLE classes (
-    class_description TEXT,
     class_name VARCHAR(255),
+    class_description TEXT,
     id SERIAL PRIMARY KEY
 );
 
