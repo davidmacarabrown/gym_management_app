@@ -1,37 +1,47 @@
+import pdb
 from models.member import Member
 from models.gym_class import GymClass
-# from models.booking import Booking
+from models.booking import Booking
+
 
 import repositories.member_repository as member_repository
 import repositories.gym_class_repository as gym_class_repository
-# import repositories.booking_repository as booking_repository
+import repositories.booking_repository as booking_repository
 
-# member_repository.delete_all()
-# member_1 = Member("David", "Brown")
-# member_repository.save_member(member_1)
 
-# member_1 = member_repository.select_member(1)
-# member_1.first_name = "John"
-# member_1.last_name = "117"
-# member_repository.update_member(member_1)
 
-# print(member_repository.select_all())
-# member_1.last_name = "Awesome"
-# member_repository.update_member(member_1)
-# print(member_repository.select_all())
+member_1 = Member("David", "Brown")
+member_2 = Member("John", "117")
+member_3 = Member("Saruman", "The White")
+member_4 = Member("Gandalf", "The Grey")
+
 
 class_1 = GymClass("Personal Training", "One to one personal training session focusing on helping the client achieve their specific fitness goals, and providing structured training for clients of all levels of ability. This includes workout planning and training the client in the safe use of machines and gym equipment.")
 
 class_2 = GymClass("Badminton Singles", "Solo badminton coaching with one instructor, highly focused training suitable for individuals of any skill level.")
 
+member_repository.save_member(member_1)
+member_repository.save_member(member_2)
+member_repository.save_member(member_3)
+member_repository.save_member(member_4)
+
 gym_class_repository.create_class(class_1)
 gym_class_repository.create_class(class_2)
-# class_1 = gym_class_repository.select_class(1)
 
-# class_1.description = "Lifting heavy stuff."
+member_1 = member_repository.select_member(1)
+member_2 = member_repository.select_member(2)
+member_3 = member_repository.select_member(3)
+member_4 = member_repository.select_member(4)
 
-# gym_class_repository.update_class(class_1)
+class_1 = gym_class_repository.select_class(1)
+class_2 = gym_class_repository.select_class(2)
 
-gym_class_repository.delete_all_classes()
+booking_repository.save_booking(member_1, class_1)
+booking_repository.save_booking(member_2, class_2)
+booking_repository.save_booking(member_3, class_1)
+booking_repository.save_booking(member_4, class_2)
 
-print(gym_class_repository.select_all())
+# pdb.set_trace()
+
+# gym_class_repository.show_booked_members(class_1)
+gym_class_repository.show_booked_members(class_2)

@@ -3,6 +3,7 @@ import pdb
 from db.run_sql import run_sql
 
 from models.gym_class import GymClass
+import repositories.member_repository as member_repository
 
 def create_class(gym_class):
 
@@ -14,6 +15,20 @@ def create_class(gym_class):
     id = result[0]["id"]
     returned_class = GymClass(name, description, id)
     return returned_class
+
+def show_booked_members(gym_class):
+    booked_members = []
+    sql = "SELECT bookings.member_id FROM bookings INNER JOIN classes ON classes.id = bookings.class_id WHERE class_id = %s"
+    values = [gym_class.id]
+    result = run_sql(sql, values)
+    if result is not None:
+        for row in result:
+            member = member_repository.select_member(row[0])
+            booked_members.append(member)
+            print(member.first_name)
+            
+    return booked_members
+        
 
 def select_class(id):
 
