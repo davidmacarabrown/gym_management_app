@@ -32,6 +32,6 @@ gym_class_repository.create_class(class_2)
 
 # gym_class_repository.update_class(class_1)
 
-gym_class_repository.delete_class(1)
+gym_class_repository.delete_all_classes()
 
 print(gym_class_repository.select_all())

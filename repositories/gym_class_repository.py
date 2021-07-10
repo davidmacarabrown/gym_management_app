@@ -42,3 +42,8 @@ def delete_class(id):
     sql = "DELETE FROM classes WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def delete_all_classes():
+    
+    sql = "DELETE FROM classes"
+    run_sql(sql)
