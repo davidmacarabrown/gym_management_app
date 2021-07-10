@@ -9,9 +9,14 @@ def save_member(member):
     sql = "INSERT INTO members (first_name, last_name) VALUES (%s, %s) RETURNING id"
     values = [member.first_name, member.last_name]
     results = run_sql(sql, values)
-    member.id = results[0]
+    member.id = results[0]["id"]
     return member
     
+def update_member(member):
+    sql = "UPDATE members SET first_name = %s, last_name = %s WHERE id = %s"
+    values = [member.first_name, member.last_name, member.id]
+    results = run_sql(sql, values)
+    print(results)
 
 def select_member(id):
     
@@ -32,6 +37,6 @@ def select_all():
     return results
 
 def delete_all():
-    
+
     sql = "DELETE FROM members"
     run_sql(sql)
