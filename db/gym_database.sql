@@ -4,9 +4,9 @@ DROP TABLE IF EXISTS classes;
 
 
 CREATE TABLE members(
-    id SERIAL PRIMARY KEY,
     first_name VARCHAR(255),
-    last_name VARCHAR(255)
+    last_name VARCHAR(255),
+    id SERIAL PRIMARY KEY
 );
 
 CREATE TABLE classes (

@@ -5,7 +5,7 @@ from models.member import Member
 import pdb
 
 def save_member(member):
-    # pdb.set_trace()
+    
     sql = "INSERT INTO members (first_name, last_name) VALUES (%s, %s) RETURNING id"
     values = [member.first_name, member.last_name]
     results = run_sql(sql, values)
@@ -13,11 +13,24 @@ def save_member(member):
     return member
     
 
-def delete_all():
-    sql = "DELETE FROM members"
-    run_sql(sql)
+def select_member(id):
+    # pdb.set_trace()
+    member = None
+    sql = "SELECT * FROM members WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    if results is not None:
+        member = Member(results[0]['first_name'], results[0]['last_name'] , results[0]['id'])
+    
+    return member
 
 def select_all():
+    # pdb.set_trace()
     sql = "SELECT * FROM members"
     results = run_sql(sql)
     return results
+
+def delete_all():
+    sql = "DELETE FROM members"
+    run_sql(sql)
