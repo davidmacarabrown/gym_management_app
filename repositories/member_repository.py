@@ -16,3 +16,8 @@ def save_member(member):
 def delete_all():
     sql = "DELETE FROM members"
     run_sql(sql)
+
+def select_all():
+    sql = "SELECT * FROM members"
+    results = run_sql(sql)
+    return results

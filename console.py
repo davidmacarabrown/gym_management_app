@@ -8,4 +8,5 @@ import repositories.member_repository as member_repository
 
 member_1 = Member("David", "Brown")
 
-print(member_repository.save_member(member_1))
+member_repository.save_member(member_1)
+print(member_repository.select_all())
