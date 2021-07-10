@@ -9,6 +9,7 @@ app.register_blueprint(member_blueprint)
 app.register_blueprint(gym_class_blueprint)
 app.register_blueprint(booking_blueprint)
 
+
 @app.route("/")
 def index():
     return render_template("index.html")
