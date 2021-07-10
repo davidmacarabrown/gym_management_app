@@ -26,10 +26,12 @@ class_2 = GymClass("Badminton Singles", "Solo badminton coaching with one instru
 
 gym_class_repository.create_class(class_1)
 gym_class_repository.create_class(class_2)
-class_1 = gym_class_repository.select_class(1)
+# class_1 = gym_class_repository.select_class(1)
 
-class_1.description = "Lifting heavy stuff."
+# class_1.description = "Lifting heavy stuff."
 
-gym_class_repository.update_class(class_1)
+# gym_class_repository.update_class(class_1)
 
-print(gym_class_repository.select_class(1).description)
+gym_class_repository.delete_class(1)
+
+print(gym_class_repository.select_all())

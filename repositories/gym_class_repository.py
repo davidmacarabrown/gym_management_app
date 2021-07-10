@@ -30,11 +30,15 @@ def select_all():
     return result
 
 def update_class(class_input):
-    pdb.set_trace()
+
     sql = "UPDATE classes SET class_name = %s, class_description = %s WHERE id = %s RETURNING *"
     values = [class_input.name, class_input.description, class_input.id]
     result = run_sql(sql, values)
     updated_class = GymClass(result[0]["class_name"], result[0]["class_description"], class_input.id)
     return updated_class
 
+def delete_class(id):
 
+    sql = "DELETE FROM classes WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
