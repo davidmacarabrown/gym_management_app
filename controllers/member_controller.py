@@ -24,7 +24,7 @@ def save():
     first_name = request.form["first_name"]
     last_name = request.form["last_name"]
     member = Member(first_name, last_name)
-    member_repository.save_member(member)
+    member_repository.update_member(member)
     return redirect("/members")
 
 @members_blueprint.route("/members/<id>/edit")
