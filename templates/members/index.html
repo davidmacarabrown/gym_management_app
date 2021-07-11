@@ -3,7 +3,7 @@
 {% block content %}
 
 {% for member in all_members %}
-<div>{{member.id}} {{member.first_name}} {{member.last_name}}</div>
+<div>{{member.id}} {{member.first_name}} {{member.last_name}}<a href="/members/{{member.id}}">View</a> </div>
 {% endfor %}
 
 {% endblock %}
