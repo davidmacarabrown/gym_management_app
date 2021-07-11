@@ -5,5 +5,8 @@
     <p>Member ID: {{member.id}}</p>
     <p>First Name: {{member.first_name}}</p>
     <p>Last Name: {{member.last_name}}</p>
+    <form action="/members/{{member.id}}/edit" method="get">
+        <button type="submit">Edit</button>
+    </form>
 </div>
 {% endblock %}

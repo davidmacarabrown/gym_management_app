@@ -26,3 +26,16 @@ def save():
     member = Member(first_name, last_name)
     member_repository.save_member(member)
     return redirect("/members")
+
+@members_blueprint.route("/members/<id>/edit")
+def edit(id):
+    member = member_repository.select_member(id)
+    return render_template("/members/edit.html", member = member)
+
+@members_blueprint.route("/members/<id>", methods = ["POST"])
+def save_edit(id):
+    first_name = request.form["first_name"]
+    last_name = request.form["last_name"]
+    member = Member(first_name, last_name, id)
+    member_repository.update_member(member)
+    return redirect("/members")
