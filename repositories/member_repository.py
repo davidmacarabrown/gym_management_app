@@ -35,7 +35,7 @@ def select_member(id):
 
 def select_all():
     
-    sql = "SELECT * FROM members"
+    sql = "SELECT * FROM members ORDER BY id ASC"
     results = run_sql(sql)
     return results
 

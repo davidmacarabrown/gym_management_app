@@ -1,9 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<hr>
 {% for member in all_members %}
-<div>{{member.id}} {{member.first_name}} {{member.last_name}}<a href="/members/{{member.id}}">View</a> </div>
+
+<div>
+    <p>{{member.id}} {{member.first_name}} {{member.last_name}}</p><form action="/members/{{member.id}}" method="get"><button type="submit">View</button><hr> 
+</div>
 {% endfor %}
 
 {% endblock %}
