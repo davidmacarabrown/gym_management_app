@@ -2,6 +2,8 @@
 
 {% block content %}
 
-List of members goes here.
+{% for member in all_members %}
+<div>{{member.id}} {{member.first_name}} {{member.last_name}}</div>
+{% endfor %}
 
 {% endblock %}
