@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-{{member.first_name}}
-{{member.last_name}}
+<div>
+    <p>Member ID: {{member.id}}</p>
+    <p>First Name: {{member.first_name}}</p>
+    <p>Last Name: {{member.last_name}}</p>
+</div>
 {% endblock %}
