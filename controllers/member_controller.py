@@ -24,5 +24,5 @@ def save():
     first_name = request.form["first_name"]
     last_name = request.form["last_name"]
     member = Member(first_name, last_name)
-    member_repository.save_member()
+    member_repository.save_member(member)
     return redirect("/members")
