@@ -1,6 +1,9 @@
+from models.gym_class import GymClass
 from db.run_sql import run_sql
 
 from models.member import Member
+
+import repositories.gym_class_repository as gym_class_repository
 
 import pdb
 
@@ -35,6 +38,22 @@ def select_all():
     sql = "SELECT * FROM members"
     results = run_sql(sql)
     return results
+
+def show_booked_classes(id):
+
+    booked_classes = []
+    
+    sql = "SELECT bookings.class_id FROM bookings INNER JOIN members ON members.id = bookings.member_id WHERE member_id = %s"
+
+    values = [id]
+    result = run_sql(sql, values)
+
+    for row in result:
+        booked_class = gym_class_repository.select_class(row[0])
+        booked_classes.append(booked_class)
+    
+    print(booked_classes)
+    return booked_classes
 
 def delete_member(id):
 

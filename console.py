@@ -20,6 +20,8 @@ class_1 = GymClass("Personal Training", "One to one personal training session fo
 
 class_2 = GymClass("Badminton Singles", "Solo badminton coaching with one instructor, highly focused training suitable for individuals of any skill level.")
 
+class_3 = GymClass("Introduction To Martial Arts", "Group sessions teaching the fundamentals of Martial Arts. A beginner level class for students with little to no experience.")
+
 member_repository.save_member(member_1)
 member_repository.save_member(member_2)
 member_repository.save_member(member_3)
@@ -27,6 +29,7 @@ member_repository.save_member(member_4)
 
 gym_class_repository.create_class(class_1)
 gym_class_repository.create_class(class_2)
+gym_class_repository.create_class(class_3)
 
 member_1 = member_repository.select_member(1)
 member_2 = member_repository.select_member(2)
@@ -35,13 +38,13 @@ member_4 = member_repository.select_member(4)
 
 class_1 = gym_class_repository.select_class(1)
 class_2 = gym_class_repository.select_class(2)
+class_3 = gym_class_repository.select_class(3)
 
 booking_repository.save_booking(member_1, class_1)
-booking_repository.save_booking(member_2, class_2)
-booking_repository.save_booking(member_3, class_1)
-booking_repository.save_booking(member_4, class_2)
+booking_repository.save_booking(member_1, class_2)
+booking_repository.save_booking(member_1, class_3)
 
 # pdb.set_trace()
 
 # gym_class_repository.show_booked_members(class_1)
-gym_class_repository.show_booked_members(class_2)
+member_repository.show_booked_classes(1)

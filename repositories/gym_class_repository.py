@@ -25,7 +25,6 @@ def show_booked_members(gym_class):
         for row in result:
             member = member_repository.select_member(row[0])
             booked_members.append(member)
-            print(member.first_name)
             
     return booked_members
         
