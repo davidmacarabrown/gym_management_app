@@ -1,1 +1,10 @@
-This is the info of a single gym class!
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+    <p>Name:</p>
+    <p>{{selected_class.name}}</p>
+    <p>Description:</p>
+    <p>{{selected_class.description}}</p>
+</div>
+{% endblock %}

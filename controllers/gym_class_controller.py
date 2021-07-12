@@ -13,6 +13,6 @@ def classes():
 
 @gym_class_blueprint.route("/classes/<id>")
 def show_class(id):
-    selected_class = gym_class_repository.select_class(1)
+    selected_class = gym_class_repository.select_class(id)
     return render_template("/gym_class/show.html", selected_class = selected_class)
 
