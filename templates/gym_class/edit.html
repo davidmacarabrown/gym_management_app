@@ -7,7 +7,7 @@
         <label for="name">Class Name:</label>
         <input type="text" name="name" id="name" value="{{class_to_edit.name}}"><br>
         <label for="description"> Class Description:</label><br>
-        <textarea name="description" id="description" placeholder="{{class_to_edit.description}}" cols="60" rows="5"></textarea><br>
+        <textarea name="description" id="description" value="{{class_to_edit.description}}" cols="60" rows="5">{{class_to_edit.description}}</textarea><br>
         <button type="submit">Save Changes</button>
     </form>
 </div>
