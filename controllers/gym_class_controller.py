@@ -28,3 +28,8 @@ def save_class():
     gym_class = GymClass(class_name, class_description)
     gym_class_repository.create_class(gym_class)
     return redirect("/classes")
+
+@gym_class_blueprint.route("/classes/<id>/edit")
+def edit_class(id):
+    class_to_edit = gym_class_repository.select_class(id)
+    return render_template("/gym_class/edit.html", class_to_edit = class_to_edit)
