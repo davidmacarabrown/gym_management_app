@@ -12,13 +12,15 @@ def save_member(member):
     sql = "INSERT INTO members (first_name, last_name) VALUES (%s, %s) RETURNING id"
     values = [member.first_name, member.last_name]
     results = run_sql(sql, values)
-    member.id = results[0]
+    member.id = results[0]["id"]
     return member
     
+
 def update_member(member):
     sql = "UPDATE members SET first_name = %s, last_name = %s WHERE id = %s"
     values = [member.first_name, member.last_name, member.id]
     results = run_sql(sql, values)
+
 
 def select_member(id):
     
@@ -54,12 +56,8 @@ def show_booked_classes(id):
     values = [id]
     result = run_sql(sql, values)
 
-    for row in result:
-        booked_class = gym_class_repository.select_class(row[0])
-        booked_classes.append(booked_class)
-    
-    print(booked_classes)
-    return booked_classes
+    print(result)
+
 
 def delete_member(id):
 

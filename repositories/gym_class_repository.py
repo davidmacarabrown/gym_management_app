@@ -12,9 +12,8 @@ def create_class(gym_class):
     result = run_sql(sql, values)
     name = result[0]["class_name"]
     description = result[0]["class_description"]
-    id = result[0]["id"]
-    returned_class = GymClass(name, description, id)
-    return returned_class
+    gym_class.id = result[0]["id"]
+
 
 def show_booked_members(gym_class):
     booked_members = []
