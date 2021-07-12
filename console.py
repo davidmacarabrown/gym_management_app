@@ -42,3 +42,5 @@ booking_repository.save_booking(member_3, class_3)
 booking_repository.save_booking(member_4, class_1)
 booking_repository.save_booking(member_2, class_1)
 
+all_bookings = booking_repository.select_all()
+
