@@ -31,16 +31,7 @@ gym_class_repository.create_class(class_1)
 gym_class_repository.create_class(class_2)
 gym_class_repository.create_class(class_3)
 
-member_1 = member_repository.select_member(1)
-member_2 = member_repository.select_member(2)
-member_3 = member_repository.select_member(3)
-member_4 = member_repository.select_member(4)
 
-booking_repository.save_booking(member_1, class_1)
-booking_repository.save_booking(member_2, class_2)
-booking_repository.save_booking(member_3, class_3)
-booking_repository.save_booking(member_4, class_1)
-booking_repository.save_booking(member_2, class_1)
 
-all_bookings = booking_repository.select_all()
+
 
