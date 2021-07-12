@@ -20,3 +20,11 @@ def show_class(id):
 @gym_class_blueprint.route("/classes/new")
 def add_class():
     return render_template("/gym_class/new.html")
+
+@gym_class_blueprint.route("/classes", methods = ["POST"])
+def save_class():
+    class_name = request.form["name"]
+    class_description = request.form["description"]
+    gym_class = GymClass(class_name, class_description)
+    gym_class_repository.create_class(gym_class)
+    return redirect("/classes")

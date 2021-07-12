@@ -1,1 +1,17 @@
-Where a new class will be added!
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+    <div>
+        <form action="/classes" method="post">
+            <label for="name">Class Name:</label>
+            <input type="text" name="name" id="name" required><br>
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" required rows="4" cols="16"></textarea><br>
+            <button type="submit">Add Class</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
