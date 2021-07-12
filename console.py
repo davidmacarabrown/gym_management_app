@@ -40,4 +40,5 @@ member_2 = member_repository.select_member(2)
 member_3 = member_repository.select_member(3)
 member_4 = member_repository.select_member(4)
 
-member_repository.show_booked_classes(1)
+
+print(member_repository.show_booked_classes(1)[0])

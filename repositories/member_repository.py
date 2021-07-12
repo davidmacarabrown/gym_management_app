@@ -13,7 +13,6 @@ def save_member(member):
     values = [member.first_name, member.last_name]
     results = run_sql(sql, values)
     member.id = results[0]["id"]
-    return member
     
 
 def update_member(member):
@@ -55,8 +54,14 @@ def show_booked_classes(id):
 
     values = [id]
     result = run_sql(sql, values)
-
-    print(result)
+    
+    if result is not None:
+        for row in result:
+            class_id = row["class_id"]
+            class_booked = gym_class_repository.select_class(class_id)
+            booked_classes.append(class_booked)
+    
+    return booked_classes
 
 
 def delete_member(id):
