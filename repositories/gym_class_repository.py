@@ -15,10 +15,10 @@ def create_class(gym_class):
     gym_class.id = result[0]["id"]
 
 
-def show_booked_members(gym_class):
+def show_booked_members(class_id):
     booked_members = []
     sql = "SELECT bookings.member_id FROM bookings INNER JOIN classes ON classes.id = bookings.class_id WHERE class_id = %s"
-    values = [gym_class.id]
+    values = [class_id]
     result = run_sql(sql, values)
     if result is not None:
         for row in result:
@@ -54,7 +54,6 @@ def update_class(class_input):
     values = [class_input.name, class_input.description, class_input.id]
     result = run_sql(sql, values)
     updated_class = GymClass(result[0]["class_name"], result[0]["class_description"], class_input.id)
-    return updated_class
 
 def delete_class(id):
 
