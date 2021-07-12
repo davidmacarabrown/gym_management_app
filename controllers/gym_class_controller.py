@@ -17,3 +17,6 @@ def show_class(id):
     booked_members = gym_class_repository.show_booked_members(id)
     return render_template("/gym_class/show.html", selected_class = selected_class, booked_members = booked_members)
 
+@gym_class_blueprint.route("/classes/new")
+def add_class():
+    return render_template("/gym_class/new.html")
