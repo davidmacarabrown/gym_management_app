@@ -1,1 +1,14 @@
-this is the page to edit the class!
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+    <form action="/classes/{{class_to_edit.id}}" method="post">
+        <label for="class_name">Class Name:</label>
+        <input type="text" id="class_name" value="{{class_to_edit.name}}"><br>
+        <label for="class_description"> Class Description:</label><br>
+        <textarea name="class_description" id="class_description" placeholder="{{class_to_edit.description}}" cols="30" rows="10"></textarea>
+    </form>
+</div>
+
+{% endblock %}
