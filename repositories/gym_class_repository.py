@@ -16,10 +16,12 @@ def create_class(gym_class):
 
 
 def show_booked_members(class_id):
+    
     booked_members = []
     sql = "SELECT bookings.member_id FROM bookings INNER JOIN classes ON classes.id = bookings.class_id WHERE class_id = %s"
     values = [class_id]
     result = run_sql(sql, values)
+
     if result is not None:
         for row in result:
             member = member_repository.select_member(row[0])

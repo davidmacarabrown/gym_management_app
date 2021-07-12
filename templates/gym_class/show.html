@@ -2,9 +2,18 @@
 
 {% block content %}
 <div>
-    <p>Name:</p>
+    <h3>Name:</h3>
     <p>{{selected_class.name}}</p>
-    <p>Description:</p>
+    <h3>Description:</h3>
     <p>{{selected_class.description}}</p>
+    <h3>Currently Booked Members:</h3>
+    <div>
+        {% for member in booked_members %}
+        <div>
+            <p>{{member.first_name}} {{member.last_name}}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <p></p>
 </div>
 {% endblock %}

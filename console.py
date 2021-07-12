@@ -37,6 +37,8 @@ member_3 = member_repository.select_member(3)
 member_4 = member_repository.select_member(4)
 
 booking_repository.save_booking(member_1, class_1)
+booking_repository.save_booking(member_2, class_2)
+booking_repository.save_booking(member_3, class_3)
+booking_repository.save_booking(member_4, class_1)
 booking_repository.save_booking(member_2, class_1)
-booking_repository.save_booking(member_3, class_1)
 
