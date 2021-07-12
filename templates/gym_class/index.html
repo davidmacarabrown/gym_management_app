@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+{% for class in all_classes %}
+<div>
+    <p>{{class.name}}<a href="/classes/{{class.id}}">View Class Info</a></p>
+</div>
+{% endfor %}
 {% endblock %}

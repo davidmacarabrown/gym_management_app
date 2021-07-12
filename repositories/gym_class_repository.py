@@ -39,9 +39,15 @@ def select_class(id):
 
 def select_all():
 
-    sql = "SELECT * FROM classes"
+    all_classes= []
+    sql = "SELECT * FROM classes ORDER BY id ASC"
     result = run_sql(sql)
-    return result
+    for row in result:
+        selected_class = GymClass(row[0], row[1], row[2])
+        all_classes.append(selected_class)
+    
+    return all_classes
+
 
 def update_class(class_input):
 

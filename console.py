@@ -36,15 +36,4 @@ member_2 = member_repository.select_member(2)
 member_3 = member_repository.select_member(3)
 member_4 = member_repository.select_member(4)
 
-class_1 = gym_class_repository.select_class(1)
-class_2 = gym_class_repository.select_class(2)
-class_3 = gym_class_repository.select_class(3)
-
-booking_repository.save_booking(member_1, class_1)
-booking_repository.save_booking(member_1, class_2)
-booking_repository.save_booking(member_1, class_3)
-
-# pdb.set_trace()
-
-# gym_class_repository.show_booked_members(class_1)
-member_repository.show_booked_classes(1)
+print(member_repository.select_all())

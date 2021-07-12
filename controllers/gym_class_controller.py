@@ -11,3 +11,8 @@ def classes():
     all_classes = gym_class_repository.select_all()
     return render_template("/gym_class/index.html", all_classes = all_classes)
 
+@gym_class_blueprint.route("/classes/<id>")
+def show_class(id):
+    selected_class = gym_class_repository.select_class(1)
+    return render_template("/gym_class/show.html", selected_class = selected_class)
+
