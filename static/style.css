@@ -263,8 +263,9 @@ footer > p {
 
 .class-information-container {
     grid-area: class-id;
-}
- .class-name {
+} 
+
+.class-name {
      grid-area: class-name;
  }
 
@@ -288,3 +289,29 @@ footer > p {
  #members-list-selector {
      align-content: center;
  }
+
+ /* CREATE CLASS PAGE -------------------------------- */
+
+ .save-class-form {
+     display:grid;
+     grid-template-columns: 20% 80%;
+     grid-template-areas:
+      "class-label class-text"
+      "description-label description-text"}
+
+
+.class-label {
+    grid-area: class-label;
+}
+
+.class-text {
+    grid-area: class-text;
+}
+
+.description-label {
+    grid-area: description-label;
+}
+
+.description-text {
+    grid-area: description-text;
+}

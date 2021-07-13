@@ -1,17 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<div>
-    <div>
-        <form action="/classes" method="post">
-            <label for="name">Class Name:</label>
-            <input type="text" name="name" id="name" required><br>
-            <label for="description">Description:</label>
-            <textarea name="description" id="description" required rows="4" cols="16"></textarea><br>
-            <button type="submit">Add Class</button>
+<main>
+    <div class="child-head-container">
+        <form class="back-button-form" action="/">
+            <button class="child-head-button" type="submit">Back</button>
         </form>
+        <h3 class="child-h3">Create Class</h3>
+        <button form="save-class-form" type="submit">Save Class</button>
     </div>
-</div>
-
+    <hr>
+    <div>
+        <div>
+            <form id="save-class-form" action="/classes" method="post">
+                <div class="save-class-form">
+                    <label class="class-label" for="name">Class Name:</label>
+                    <input class="class-text" type="text" name="name" id="name" required><br>
+                    <label class="description-label" for="description">Description:</label>
+                    <textarea class="description-text" name="description" id="description" required rows="4" cols="40"></textarea><br>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
 {% endblock %}
