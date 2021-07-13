@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-<hr>
-{% for member in all_members %}
+<main>
+    <h3>Currently Active Members</h3>
+    {% for member in all_members %}
+    <div>
+        <p>{{member.first_name}} {{member.last_name}} <a href="/members/{{member.id}}">View</a></p>
+    </div>
+    {% endfor %}
 
-<div>
-    <p>{{member.first_name}} {{member.last_name}} <a href="/members/{{member.id}}">View</a></p>
-</div>
-{% endfor %}
-
+</main>
 {% endblock %}
