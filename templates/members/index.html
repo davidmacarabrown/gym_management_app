@@ -2,11 +2,13 @@
 
 {% block content %}
 <main>
-    <div class="member-head-flexbox">
-        <h3>Active Members</h3>
-        <form action="/index">
-            <button type="submit">Back</button>
+    <div class="member-head-container">
+        
+        <form class=back-button-form action="/">
+            <button class="child-page-back-button" type="submit">Back</button>
         </form>
+        <h3 class="member-list-h3">Active Members</h3>
+        <div class="member-head-pad"></div>
     </div>
     <hr>
         {% for member in all_members %}

@@ -34,7 +34,11 @@ a {
     text-decoration: none;
 }
 
-/* Start page grid ------------------------------ */
+/* Start page ---------------------------------- */
+
+#main-menu-h3 {
+    margin-bottom: 5%;
+}
 
 .link-button-left {
     width: 100%;
@@ -127,7 +131,7 @@ footer > p {
 
 .member-row {
     display: grid;
-    grid-template-columns: 65% 35%;
+    grid-template-columns: 70% 30%;
     grid-template-areas:
     "name view-member";
 }
@@ -140,4 +144,28 @@ footer > p {
 .view-member-button {
     grid-area: view-member;
     width: 100%;
+}
+
+.member-head-container {
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    grid-template-areas: 
+    "back-button header pad";
+}
+
+.back-button-form {
+    grid-area: back-button;
+    width: 100%;
+}
+
+.child-page-back-button {
+    width: 100%;
+}
+
+.member-list-h3 {
+    grid-area: header;
+}
+
+.member-head-pad {
+    grid-area: pad;
 }
