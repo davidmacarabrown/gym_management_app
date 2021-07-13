@@ -31,14 +31,16 @@ def select_all():
 
     return all_bookings
 
+def select_booking_by_class_and_member_id(member_id, class_id):
 
-# def generate_booking_details(bookings):
+    sql = "SELECT bookings.id FROM bookings INNER JOIN classes ON classes.id = bookings.class_id INNER JOIN members ON members.id = bookings.member_id "
+    values =[member_id, class_id]
+    result = run_sql(sql, values)[0]["id"]
+    return result
 
-#     if bookings is not None:
 
-#         for booking in bookings:
-#             print(member_repository.select_member(booking.member_id).first_name)
-#             booking_detail = []
-#             booking_detail.append(booking.booking_id)
+def delete_booking(id):
 
-            
+    sql ="DELETE FROM bookings WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

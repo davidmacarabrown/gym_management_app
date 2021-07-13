@@ -7,7 +7,9 @@
             <button class="child-head-button" type="submit">Back</button>
         </form>
         <h3 class="child-h3">{{selected_class.name}}</h3>
-        <div class="child-pad"></div>
+        {% if no_of_members_booked != 0 %}
+        <button form="delete-booking" type="submit">Delte Booking</button>
+        {% endif %}
     </div>
 <hr>
     <div class="class-information-container">
@@ -19,14 +21,17 @@
         </div>
         <div class="members-list">
             <p>Current Bookings:</p>
-            <select class="member-list-dropdown" name="member_id" id="members-list-selector">
+
+            <form id="delete-booking" action="/bookings/{{selected_class.id}}" method="post">
+                <select class="member-list-dropdown" name="member_id" id="members-list-selector">
                 {% if no_of_members_booked == 0 %}
                 <option>--No Bookings--</option>
                 {% endif %}
                 {% for member in booked_members %}
-                <option value="{{member.id}}">{{member.first_name}} {{member.last_name}}</option>
+                <option value="{{member.id}}" id="member_id" name="member_id">{{member.first_name}} {{member.last_name}}</option>
                 {% endfor %}
             </select>
+        </form>
         </div>
         </div>
             
