@@ -100,3 +100,18 @@ footer > p {
 
 /* VIEW MEMBERS ---------------------------- */
 
+.member-row {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+    "name view-member";
+}
+
+.member-name {
+    grid-area: name;
+    margin: 0;
+}
+
+.view-member-button {
+    grid-area: view-member;
+}

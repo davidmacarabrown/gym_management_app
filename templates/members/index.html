@@ -3,10 +3,13 @@
 {% block content %}
 <main>
     <h3>Currently Active Members</h3>
-    {% for member in all_members %}
-    <div>
-        <p>{{member.first_name}} {{member.last_name}} <a href="/members/{{member.id}}">View</a></p>
-    </div>
+    <hr>
+        {% for member in all_members %}
+        <div class="member-row">
+            <p class="member-name">{{member.first_name}} {{member.last_name}}</p><form action="/members/{{member.id}}"><button class="view-member-button" type="submit">View</button>
+            </form>
+        </div>
+    
     {% endfor %}
 
 </main>
