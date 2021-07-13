@@ -196,6 +196,32 @@ footer > p {
     text-align: center;
 }
 
+/* ADD MEMBER ---------------------------------- */
+
+.add-member-form {
+    display: grid;
+    grid-template-columns: 20% 30%;
+    grid-template-areas: 
+    "name-label name-input"
+    "last-name-label last-name-input";
+}
+.name-label-text {
+    grid-area: name-label;
+}
+
+.name-input-label {
+    grid-area: name-input;
+}
+
+.last-name-label-text {
+    grid-area: last-name-label;
+}
+
+.last-name-input {
+    grid-area: last-name-input;
+}
+
+
 /* EDIT MEMBER -------------------------------------------------------- */
 
 .edit-member {
@@ -250,15 +276,15 @@ footer > p {
     width: 100%;
 }
 
-/* CLASS INFORMATION --------------------------- */
+/* VIEW SINGLE CLASS --------------------------- */
 
 .class-information-container {
     display:grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 60% 20%;
     grid-template-areas: 
-    "class-id members-head"
     "description members-list"
-    "description-pane description-pane";
+    "description-pane members-list"
+    "description-pane members-list";
 }
 
 .class-information-container {
@@ -284,10 +310,11 @@ footer > p {
  .members-list {
      grid-area: members-list;
      align-content: center;
+     padding-left: 12%;
  }
 
- #members-list-selector {
-     align-content: center;
+ .member-list-dropdown {
+     margin-top: 7%;
  }
 
  /* CREATE CLASS PAGE -------------------------------- */
@@ -314,4 +341,38 @@ footer > p {
 
 .description-text {
     grid-area: description-text;
+}
+
+/* BOOKING FORM ----------------------------------------- */
+
+.booking-form {
+    display:grid;
+    grid-template-columns: 30% 50%;
+    grid-template-areas: 
+    "select-name name-dropdown"
+    "select-class class-dropdown";
+}
+
+.select-name {
+    grid-area: select-name;
+}
+
+.select-class {
+    grid-area: select-class;
+}
+
+.name-dropdown {
+    grid-area: name-dropdown;
+}
+
+.class-dropdown {
+    grid-area: class-dropdown;
+}
+
+#member_id {
+    width: 100%;
+}
+
+#class_id {
+    width: 100%;
 }

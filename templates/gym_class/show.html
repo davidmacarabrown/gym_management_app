@@ -11,20 +11,18 @@
     </div>
 <hr>
     <div class="class-information-container">
-        <div class="class-id">
-            <p>ID: {{selected_class.id}}</p>
-        </div>
         <div class="description">
             <p>Description:</p>
         </div>
         <div class="description-pane">
             <p>{{selected_class.description}}</p>
         </div>
-        <div class="members-head">
-            <p>Current Bookings:</p>
-        </div>
         <div class="members-list">
-            <select name="member_id" id="members-list-selector">
+            <p>Current Bookings:</p>
+            <select class="member-list-dropdown" name="member_id" id="members-list-selector">
+                {% if no_of_members_booked == 0 %}
+                <option>--No Bookings--</option>
+                {% endif %}
                 {% for member in booked_members %}
                 <option value="{{member.id}}">{{member.first_name}} {{member.last_name}}</option>
                 {% endfor %}

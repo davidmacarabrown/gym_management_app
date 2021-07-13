@@ -17,7 +17,8 @@ def classes():
 def show_class(id):
     selected_class = gym_class_repository.select_class(id)
     booked_members = gym_class_repository.show_booked_members(id)
-    return render_template("/gym_class/show.html", selected_class = selected_class, booked_members = booked_members)
+    no_of_members_booked = len(booked_members)
+    return render_template("/gym_class/show.html", selected_class = selected_class, booked_members = booked_members, no_of_members_booked = no_of_members_booked)
 
 
 @gym_class_blueprint.route("/classes/new")
