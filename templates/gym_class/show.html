@@ -1,20 +1,37 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div>
-    <h3>Class ID:</h3><p>{{selected_class.id}}</p>
-    <h3>Name:</h3>
-    <p>{{selected_class.name}}</p>
-    <h3>Description:</h3>
-    <p>{{selected_class.description}}</p>
-    <h3>Currently Booked Members:</h3>
-    <div>
-        {% for member in booked_members %}
-        <div>
-            <p>{{member.first_name}} {{member.last_name}}</p>
-        </div>
-        {% endfor %}
+<main>
+    <div class="child-head-container">
+        <form class=back-button-form action="/classes">
+            <button class="child-head-button" type="submit">Back</button>
+        </form>
+        <h3 class="child-h3">{{selected_class.name}}</h3>
+        <div class="child-pad"></div>
     </div>
-    <a href="/classes">Back</a>
-</div>
+<hr>
+    <div class="class-information-container">
+        <div class="class-id">
+            <p>ID: {{selected_class.id}}</p>
+        </div>
+        <div class="description">
+            <p>Description:</p>
+        </div>
+        <div class="description-pane">
+            <p>{{selected_class.description}}</p>
+        </div>
+        <div class="members-head">
+            <p>Current Bookings:</p>
+        </div>
+        <div class="members-list">
+            <select name="member_id" id="members-list-selector">
+                {% for member in booked_members %}
+                <option value="{{member.id}}">{{member.first_name}} {{member.last_name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        </div>
+            
+    </div>
+</main>
 {% endblock %}

@@ -7,16 +7,15 @@
             <button class="child-head-button" type="submit">Cancel</button>
         </form>
         <h3 class="child-h3">Edit Class</h3>
-        <div class="child-pad"></div>
+        <button form="class-edit-form" id="save-button-class-edit" type="submit">Save Changes</button>
     </div>
 <hr>
 <div>
-    <form action="/classes/{{class_to_edit.id}}" method="post">
-        <label for="name">Class Name:</label>
+    <form id="class-edit-form" action="/classes/{{class_to_edit.id}}" method="post">
+        <label for="name">Class Name:</label><br>
         <input type="text" name="name" id="name" value="{{class_to_edit.name}}"><br>
         <label for="description"> Class Description:</label><br>
         <textarea name="description" id="description" cols="40" rows="7">{{class_to_edit.description}}</textarea><br>
-        <button type="submit">Save Changes</button>
     </form>
 </div>
 

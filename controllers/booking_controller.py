@@ -19,4 +19,4 @@ def save_booking():
     member = member_repository.select_member(request.form["member_id"])
     gym_class = gym_class_repository.select_class(request.form["class_id"])
     booking_repository.save_booking(member, gym_class)
-    return redirect("/classes")
+    return redirect("/")

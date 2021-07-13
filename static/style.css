@@ -33,6 +33,21 @@ main {
 a {
     text-decoration: none;
 }
+textarea {
+    font-family: "Teko", Arial;
+}
+
+button {
+    font-family: "Teko", Arial;
+}
+
+input[type=text] {
+    font-family: "Teko", Arial;
+}
+
+option {
+    font-family: "Teko", Arial;
+}
 
 /* Start page ---------------------------------- */
 
@@ -214,3 +229,62 @@ footer > p {
 .class-edit-page-button {
     width: 90%;
 }
+
+.save-button-container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-areas:
+    "save-button" "right-side-pad";
+}
+
+.save-button {
+    grid-area: save-button;
+    width: 100%;
+}
+
+.save-button-padding {
+    grid-area: right-side-pad;
+}
+
+#save-button-class-edit {
+    width: 100%;
+}
+
+/* CLASS INFORMATION --------------------------- */
+
+.class-information-container {
+    display:grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: 
+    "class-id members-head"
+    "description members-list"
+    "description-pane description-pane";
+}
+
+.class-information-container {
+    grid-area: class-id;
+}
+ .class-name {
+     grid-area: class-name;
+ }
+
+ .description {
+     grid-area: description;
+ }
+
+ .description-pane {
+     grid-area: description-pane;
+ }
+
+ .members-head {
+     grid-area: members-head;
+ }
+
+ .members-list {
+     grid-area: members-list;
+     align-content: center;
+ }
+
+ #members-list-selector {
+     align-content: center;
+ }
