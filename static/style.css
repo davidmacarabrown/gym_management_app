@@ -146,11 +146,11 @@ footer > p {
     width: 100%;
 }
 
-.member-head-container {
+.child-head-container {
     display: grid;
     grid-template-columns: 30% 40% 30%;
     grid-template-areas: 
-    "back-button header pad";
+    "back-button header right-element";
 }
 
 .back-button-form {
@@ -158,14 +158,25 @@ footer > p {
     width: 100%;
 }
 
-.child-page-back-button {
+.child-head-button {
     width: 100%;
 }
 
-.member-list-h3 {
+.child-h3 {
     grid-area: header;
 }
 
-.member-head-pad {
-    grid-area: pad;
+.child-pad {
+    grid-area: right-element;
+}
+
+.child-edit-button {
+    grid-area: right-element;
+    width: 100%;
+}
+
+/* VIEW ONE MEMBER ---------------------------------------------- */
+
+.member-details {
+    text-align: center;
 }

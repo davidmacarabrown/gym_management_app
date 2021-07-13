@@ -1,16 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<div>
-    <p>Member ID: {{member.id}}</p>
-    <p>First Name: {{member.first_name}}</p>
-    <p>Last Name: {{member.last_name}}</p>
-    <form action="/members/{{member.id}}/edit" method="get">
-        <button type="submit">Edit</button>
-    </form>
-    <form action="/members" method="get">
-        <button type="submit">Back</button>
-    </form>
-</div>
+<main>
+    <div class="child-head-container">
+        <form class=back-button-form action="/">
+            <button class="child-head-button" type="submit">Back</button>
+        </form>
+        <h3 class="child-h3">Member Information</h3>
+        <form id="child-edit-button" action="/members/{{member.id}}/edit" method="get">
+            <button class="child-head-button" type="submit">Edit</button>
+        </form>
+    </div>
+    <hr>
+    <div class="member-details">
+        <p class="member-details">ID: {{member.id}}</p>
+        <p class="member-details">First Name: {{member.first_name}}</p>
+        <p class="member-details">Last Name: {{member.last_name}}</p>
+        
+    </div>
+</main>
 {% endblock %}
