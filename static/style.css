@@ -180,3 +180,37 @@ footer > p {
 .member-details {
     text-align: center;
 }
+
+/* EDIT MEMBER -------------------------------------------------------- */
+
+.edit-member {
+    display: flex;
+}
+
+/* VIEW CLASSES ---------------------------------------------------- */
+
+.class-list-grid {
+    display: grid;
+    grid-template-columns: 40% 30% 30%;
+    grid-template-areas: 
+    "class-name view-class edit-class";
+}
+
+.class-name-grid-area {
+    grid-area: class-name;
+    margin: 0%;
+}
+
+.class-view-button-grid-area {
+    grid-area: view-class;
+    width:100%;
+}
+
+.class-edit-button-grid-area {
+    grid-area: edit-class;
+    width:100%;
+}
+
+.class-edit-page-button {
+    width: 90%;
+}

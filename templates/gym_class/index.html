@@ -1,9 +1,27 @@
 {% extends "base.html" %}
 
 {% block content %}
+<main>
+    <div class="child-head-container">
+        <form class=back-button-form action="/">
+            <button class="child-head-button" type="submit">Back</button>
+        </form>
+        <h3 class="child-h3">Current Classes</h3>
+        <div class="child-pad"></div>
+    </div>
+<hr>
 {% for class in all_classes %}
-<div>
-    <p>{{class.name}}<a href="/classes/{{class.id}}">View Class Info</a><a href="/classes/{{class.id}}/edit">Edit Class</a></p>
-</div>
+    <div class="class-list-grid">
+        <p class="class-name-grid-area">{{class.name}}</p>
+        <form class="class-view-button-grid-area" action="/classes/{{class.id}}" method="get">
+            <button class="class-edit-page-button" type="submit">View</button>
+        </form>            
+        <form class="class-edit-button-grid-area" action="/classes/{{class.id}}/edit" method="get">
+            <button class="class-edit-page-button" type="submit">Edit</button>
+        </form>
+    </div>
+    <hr>
 {% endfor %}
+</main>
+
 {% endblock %}
