@@ -2,7 +2,12 @@
 
 {% block content %}
 <main>
-    <h3>Currently Active Members</h3>
+    <div class="member-head-flexbox">
+        <h3>Active Members</h3>
+        <form action="/index">
+            <button type="submit">Back</button>
+        </form>
+    </div>
     <hr>
         {% for member in all_members %}
         <div class="member-row">
@@ -11,5 +16,6 @@
         </div>
     <hr>
     {% endfor %}
+
 </main>
 {% endblock %}

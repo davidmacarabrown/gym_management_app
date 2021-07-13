@@ -39,13 +39,13 @@ a {
 .link-button-left {
     width: 100%;
     height: 100%;
-    margin-bottom: 1%;
+    /* margin-bottom: 1%; */
 }
 
 .link-button-right {
     width: 100%;
     height: 100%;
-    margin-bottom: 1%;
+    /* margin-bottom: 1%; */
 }
 
 .link-button-long {
@@ -55,8 +55,6 @@ a {
 a:visited {
     color: black;
 }
-
-
 
 
 .index-link-container {
@@ -70,32 +68,51 @@ a:visited {
     "create-booking create-booking create-booking";
 }
 
-.view-members {
-    grid-area: view-members;
-    padding-bottom: 5%;
+
+.start-page-form-area {
+    height: fit-content;
 }
 
 .dead-space {
     grid-area: dead-space;
 }
 
-.add-member {
+.view-members-area {
+    grid-area: view-members;
+    height: 100%;
+    padding-bottom: 5%;
+    margin-bottom: 5%;
+}
+
+.add-member-area {
     grid-area: add-member;
+    height: 100%;
     padding-bottom: 5%;
+    margin-bottom: 5%;
 }
 
-.view-classes {
+.view-classes-area {
     grid-area: view-classes;
+    height: 100%;
     padding-bottom: 5%;
+    margin-bottom: 5%;
 }
 
-.add-class {
+.add-class-area {
     grid-area: add-class;
+    height: 100%;
     padding-bottom: 5%;
+    margin-bottom: 5%;
 }
 
-.create-booking {
+.create-booking-area {
     grid-area: create-booking;
+    height: 100%;
+    margin-bottom: 3%;
+}
+
+.link-button-long {
+    height: 100%;
 }
 
 footer {
@@ -110,7 +127,7 @@ footer > p {
 
 .member-row {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 65% 35%;
     grid-template-areas:
     "name view-member";
 }
@@ -122,4 +139,5 @@ footer > p {
 
 .view-member-button {
     grid-area: view-member;
+    width: 100%;
 }
