@@ -63,27 +63,35 @@ a:visited {
     margin-left: 5%;
     margin-right: 5%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 10fr 1fr 10fr;
     grid-template-areas: 
-    "view-members  view-classes"
-    "add-member  add-class"
-    "create-booking  create-booking";
+    "view-members dead-space view-classes"
+    "add-member dead-space add-class"
+    "create-booking create-booking create-booking";
 }
 
 .view-members {
     grid-area: view-members;
+    padding-bottom: 5%;
+}
+
+.dead-space {
+    grid-area: dead-space;
 }
 
 .add-member {
     grid-area: add-member;
+    padding-bottom: 5%;
 }
 
 .view-classes {
     grid-area: view-classes;
+    padding-bottom: 5%;
 }
 
 .add-class {
     grid-area: add-class;
+    padding-bottom: 5%;
 }
 
 .create-booking {
