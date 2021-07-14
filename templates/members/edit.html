@@ -5,12 +5,12 @@
     <form class=back-button-form action="/members">
         <button class="child-head-button" type="submit">Cancel</button>
     </form>
-    <h3 class="child-h3">Edit Members</h3>
+    <h3 class="child-h3">Edit Member</h3>
     <button class="child-edit-button" form="edit-member-form" type="submit">Save Changes</button>
 </div>
 <hr>
 <div>
-    <form id="edit-member-form" action="/members/{{member.id}}" method="post">
+    <form id="edit-member-form" action="/members/{{member.id}}" method="POST">
         <div class="edit-member">
             <div>
                 <label for="first_name">First Name:</label>
@@ -20,8 +20,10 @@
                 <label for="last_name">Last Name:</label>
                 <input type="text" name="last_name" id="last_name" value="{{member.last_name}}">
             </div>
+            <a id="delete-member-link" class="delete-member-link" href="/members/{{member.id}}/delete"><i class="far fa-trash-alt"></i></a>
         </div>
         <div>
+            
             
         </div>
     </form>

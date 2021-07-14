@@ -39,6 +39,13 @@ def select_booking_by_class_and_member_id(member_id, class_id):
     return result
 
 
+def delete_bookings_by_member(member_id):
+    
+    sql = "DELETE FROM bookings WHERE member_id = %s"
+    values = [member_id]
+    run_sql(sql, values)
+    
+
 def delete_booking(id):
 
     sql ="DELETE FROM bookings WHERE id = %s"

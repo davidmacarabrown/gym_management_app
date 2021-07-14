@@ -226,8 +226,16 @@ footer > p {
 
 .edit-member {
     display: flex;
+    justify-content: space-evenly;
 }
 
+#edit-member-form > div > a {
+    color:red;
+}
+
+#edit-member-form > div > a:visited {
+    color: red;
+}
 /* VIEW CLASSES ---------------------------------------------------- */
 
 .class-list-grid {

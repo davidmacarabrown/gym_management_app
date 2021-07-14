@@ -32,7 +32,16 @@ gym_class_repository.create_class(class_2)
 gym_class_repository.create_class(class_3)
 
 booking_repository.save_booking(member_1, class_1)
-booking = booking_repository.select_booking_by_class_and_member_id(1, 1)
+booking_repository.save_booking(member_1, class_2)
+booking_repository.save_booking(member_1, class_3)
 
-print(booking)
-# pdb.set_trace()
+
+
+# member_repository.delete_member(1)
+# member_repository.delete_member(2)
+# member_repository.delete_member(3)
+# member_repository.delete_member(4)
+
+
+print(member_repository.select_all())
+print(booking_repository.select_all())
