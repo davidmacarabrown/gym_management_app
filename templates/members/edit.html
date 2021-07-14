@@ -6,11 +6,11 @@
         <button class="child-head-button" type="submit">Cancel</button>
     </form>
     <h3 class="child-h3">Edit Members</h3>
-    <div class="child-pad"></div>
+    <button class="child-edit-button" form="edit-member-form" type="submit">Save Changes</button>
 </div>
 <hr>
 <div>
-    <form action="/members/{{member.id}}" method="post">
+    <form id="edit-member-form" action="/members/{{member.id}}" method="post">
         <div class="edit-member">
             <div>
                 <label for="first_name">First Name:</label>
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div>
-            <button type="submit">Save Changes</button>
+            
         </div>
     </form>
 </div>
