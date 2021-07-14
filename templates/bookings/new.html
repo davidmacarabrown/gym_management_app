@@ -7,7 +7,9 @@
             <button class="child-head-button" type="submit">Back</button>
         </form>
         <h3 class="child-h3">Booking Form</h3>
-        <button form="booking-form" class="child-head-button" type="submit">Make Booking</button>  
+        {% if all_members_len > 0 and all_classes_len > 0 %}
+        <button form="booking-form" class="child-head-button" type="submit">Make Booking</button>
+        {% endif %}  
     </div>
     <hr>
         <div>
@@ -18,6 +20,9 @@
                     </div>
                     <div class="name-dropdown">
                         <select name="member_id" id="member_id">
+                            {% if all_members_len == 0 %}
+                            <option>No Members Registered</option>
+                            {% endif %}
                             {% for member in all_members %}
                             <option value="{{member.id}}">{{member.first_name}} {{member.last_name}}</option>
                             {% endfor %}
@@ -28,6 +33,9 @@
                     </div>
                     <div class="class-dropdown">
                         <select name="class_id" id="class_id">
+                            {% if all_classes_len == 0 %}
+                            <option>No Classes Created</option>
+                            {% endif %}
                             {% for class in all_classes %}
                             <option value="{{class.id}}">{{class.name}}</option>
                             {% endfor %}

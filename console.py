@@ -22,16 +22,16 @@ class_2 = GymClass("Badminton Singles", "Solo badminton coaching with one instru
 
 class_3 = GymClass("Introduction To Martial Arts", "Group sessions teaching the fundamentals of Martial Arts. A beginner level class for students with little to no experience.")
 
-member_repository.save_member(member_1)
-member_repository.save_member(member_2)
-member_repository.save_member(member_3)
-member_repository.save_member(member_4)
+# member_repository.save_member(member_1)
+# member_repository.save_member(member_2)
+# member_repository.save_member(member_3)
+# member_repository.save_member(member_4)
 
-gym_class_repository.create_class(class_1)
-gym_class_repository.create_class(class_2)
-gym_class_repository.create_class(class_3)
+# gym_class_repository.create_class(class_1)
+# gym_class_repository.create_class(class_2)
+# gym_class_repository.create_class(class_3)
 
-booking_repository.save_booking(member_1, class_1)
+# booking_repository.save_booking(member_1, class_1)
 
 
 # booking_repository.save_booking(member_1, class_2)

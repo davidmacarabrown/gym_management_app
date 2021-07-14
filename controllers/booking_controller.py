@@ -12,7 +12,9 @@ bookings_blueprint = Blueprint("booking", __name__)
 def create_booking():
     all_members = member_repository.select_all()
     all_classes = gym_class_repository.select_all()
-    return render_template("/bookings/new.html", all_members = all_members, all_classes = all_classes)
+    all_members_len = len(all_members)
+    all_classes_len = len(all_classes)
+    return render_template("/bookings/new.html", all_members = all_members, all_classes = all_classes, all_classes_len = all_classes_len, all_members_len = all_members_len)
 
 @bookings_blueprint.route("/bookings", methods = ["POST"])
 def save_booking():
