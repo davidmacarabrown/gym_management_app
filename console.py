@@ -32,10 +32,10 @@ gym_class_repository.create_class(class_2)
 gym_class_repository.create_class(class_3)
 
 booking_repository.save_booking(member_1, class_1)
-booking_repository.save_booking(member_1, class_2)
-booking_repository.save_booking(member_1, class_3)
 
 
+# booking_repository.save_booking(member_1, class_2)
+# booking_repository.save_booking(member_1, class_3)
 
 # member_repository.delete_member(1)
 # member_repository.delete_member(2)
@@ -43,5 +43,6 @@ booking_repository.save_booking(member_1, class_3)
 # member_repository.delete_member(4)
 
 
-print(member_repository.select_all())
-print(booking_repository.select_all())
+# print(member_repository.select_all())
+
+

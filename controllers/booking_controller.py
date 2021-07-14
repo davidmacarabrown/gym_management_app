@@ -16,10 +16,17 @@ def create_booking():
 
 @bookings_blueprint.route("/bookings", methods = ["POST"])
 def save_booking():
-    member = member_repository.select_member(request.form["member_id"])
-    gym_class = gym_class_repository.select_class(request.form["class_id"])
-    booking_repository.save_booking(member, gym_class)
-    return redirect("/")
+    member_id = request.form["member_id"]
+    class_id = request.form["class_id"]
+    member = member_repository.select_member(member_id)
+    gym_class = gym_class_repository.select_class(class_id)
+    booking_result = booking_repository.save_booking(member, gym_class)
+
+    if booking_result:
+        return redirect("/")
+
+    else:
+        return redirect("/bookings/error")
 
 @bookings_blueprint.route("/bookings/<class_id>", methods = ["POST"])
 def delete_booking(class_id):
@@ -30,3 +37,6 @@ def delete_booking(class_id):
     booking_repository.delete_booking(booking_to_remove)
     return redirect("/classes")
     
+@bookings_blueprint.route("/bookings/error")
+def booking_error():
+    return render_template("/bookings/error.html")

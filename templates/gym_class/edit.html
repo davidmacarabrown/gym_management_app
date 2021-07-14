@@ -11,11 +11,11 @@
     </div>
 <hr>
 <div>
-    <form id="class-edit-form" action="/classes/{{class_to_edit.id}}" method="post">
-        <label for="name">Class Name:</label><br>
-        <input type="text" name="name" id="name" value="{{class_to_edit.name}}"><br>
-        <label for="description"> Class Description:</label><br>
-        <textarea name="description" id="description" cols="40" rows="7">{{class_to_edit.description}}</textarea><br>
+    <form class="save-class-form" id="class-edit-form" action="/classes/{{class_to_edit.id}}" method="post">
+        <label class="class-label" for="name">Class Name:</label><br>
+        <input class="class-text" type="text" name="name" id="name" value="{{class_to_edit.name}}"><br>
+        <label class="description-label" for="description"> Class Description:</label><br>
+        <textarea class="description-text" name="description" id="description" cols="40" rows="7">{{class_to_edit.description}}</textarea><br>
     </form>
 </div>
 
